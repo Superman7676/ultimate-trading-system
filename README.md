@@ -102,6 +102,50 @@ STOP_LOSS_PERCENT=2.0
 TAKE_PROFIT_PERCENT=5.0
 ```
 
+## ☁️ Cloud Deployment
+
+### Deploy to Cloud (24/7 Operation)
+
+Don't want to run on your local machine? Deploy to the cloud with these **free** options:
+
+**👉 [See Full Cloud Deployment Guide](QUICK_DEPLOYMENT.md)**
+
+#### Quick Options:
+
+| Option | Time | Cost | Best For |
+|--------|------|------|----------|
+| **[Replit](https://replit.com)** | 5 min | Free | Beginners, quick testing |
+| **[Oracle Cloud](https://www.oracle.com/cloud/free/)** | 20 min | Free Forever! | Production, 24/7 operation |
+| **[Heroku](https://www.heroku.com)** | 10 min | Free | GitHub integration, auto-deploy |
+
+**Get bot running in 5 minutes with Replit:**
+```
+1. Go to https://replit.com
+2. Click "Create" → "Import from GitHub"
+3. Paste: https://github.com/Superman7676/ultimate-trading-system
+4. Create .env file with your tokens
+5. Click "Run"
+✅ Bot is live!
+```
+
+**Get 24/7 free hosting with Oracle Cloud:**
+```bash
+# SSH into your instance
+ssh -i your-key.pem ubuntu@your-ip
+
+# Clone and setup
+git clone https://github.com/Superman7676/ultimate-trading-system.git
+cd ultimate-trading-system
+python3 -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
+
+# Create .env and run
+nano .env  # Add your credentials
+nohup python main.py > bot.log 2>&1 &
+
+✅ Bot runs 24/7 at ZERO cost!
+```
+
 ## 🚗 Usage
 
 ### Start Telegram Bot
@@ -150,6 +194,7 @@ ultimate-trading-system/
 ├── .env.example          # Environment template
 ├── .gitignore            # Git configuration
 ├── README.md             # This file
+├── QUICK_DEPLOYMENT.md   # Cloud deployment guide
 ├── data/                 # Market data & watchlists
 ├── logs/                 # Application logs
 ├── models/               # Trained ML models
@@ -307,6 +352,7 @@ call venv\Scripts\activate.bat  # Windows
 ## 📚 Documentation
 
 For detailed documentation, visit:
+- [Cloud Deployment Guide](QUICK_DEPLOYMENT.md)
 - [Technical Analysis Guide](docs/technical_analysis.md)
 - [ML Models Documentation](docs/ml_models.md)
 - [API Reference](docs/api_reference.md)
